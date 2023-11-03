@@ -1,0 +1,86 @@
+<!-- REMOVING FROM DOM -->
+
+<!-- function setup() {
+    // Write your code here.
+    let remove = document.getElementsByClassName("remove");
+    for(let i=0;i<remove.length;i++){
+      remove[i].addEventListener("click",function(){
+        this.parentNode.remove();
+      })
+    }
+  }
+  
+  // Example case. 
+  document.body.innerHTML = `
+  <div class="image">
+    <img src="https://bit.ly/3lmYVna" alt="First">
+    <button class="remove">X</button>
+  </div>
+  <div class="image">
+    <img src="https://bit.ly/3flyaMj" alt="Second">
+    <button class="remove">X</button>
+  </div>`;
+  
+  setup();
+  
+  document.getElementsByClassName("remove")[0].click();
+  console.log(document.body.innerHTML); -->
+
+<!-- RESTYLING THE DOM -->
+
+  <!-- function newMessage(topicName) {
+    //Write your code here
+    let element = document.querySelector(`[data-topic-name="${topicName}"]`);
+
+  if (element) {
+    // Set the background color of the selected element
+    element.style.backgroundColor = "red";
+  }
+}  
+  // Example case
+  $('body').html(
+    `<div>
+      <p data-topic-name="discussion">General discussion</p>
+      <p data-topic-name="bugs">Bugs</p>
+      <p data-topic-name="animals">Animals</p>
+    </div>`
+  );
+  newMessage("discussion");
+  console.log($('body').html()); -->
+
+  <!-- function newMessage(topicName) {
+    //Write your code here
+    let thing = document.querySelector(`[data-topic-name="${topicName}"]`);
+  }
+  
+  // Example case
+  $('body').html(
+    `<div>
+      <p data-topic-name="discussion">General discussion</p>
+      <p data-topic-name="bugs">Bugs</p>
+      <p data-topic-name="animals">Animals</p>
+    </div>`
+  );
+  newMessage("discussion");
+  console.log($('body').html()); -->
+
+<!-- INFINITE LOOP WHEN GETTING ELEMENTS -->
+
+  function appendChildren(decorateDiv) {
+    var allDivs = Array.from(document.getElementsByTagName("div"));  
+    for (var i = 0; i < allDivs.length; i++) {
+      var newDiv = document.createElement("div");
+      decorateDiv(newDiv);
+      allDivs[i].appendChild(newDiv);
+    }
+  }
+  
+  // Example case. 
+  document.body.innerHTML = `
+  <div id="a">
+    <div id="b">
+    </div>
+  </div>`;
+  
+  appendChildren(function(div) {});
+  console.log(document.body.innerHTML);
